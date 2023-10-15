@@ -44,7 +44,7 @@ public class Signup extends JFrame implements ActionListener {
     Signup() {
         setTitle("NEW ACCOUNT APPLICATION FORM");
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ASimulatorSystem/icons/logo.jpg"));
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("D:/git/Bank_Management_System/Bank_Management_System/src/Project/icons/logo.png"));
         Image i2 = i1.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         JLabel l11 = new JLabel(i3);
@@ -297,11 +297,11 @@ public class Signup extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Fill all the required fields");
             } else {
                 Conn c1 = new Conn();
-                String q1 = "insert into signup values('" + formno + "','" + name + "','" + fname + "','" + dob + "','" + gender + "','" + email + "','" + marital + "','" + address + "','" + city + "','" + pincode + "','" + state + "')";
-                c1.s.executeUpdate(q1);
+                String query = "insert into signup values('" + formno + "','" + name + "','" + fname + "','" + dob + "','" + gender + "','" + email + "','" + marital + "','" + address + "','" + city + "','" + pincode + "','" + state + "')";
+                c1.s.executeUpdate(query);
 
-                new Signup2(first).setVisible(true);
-                setVisible(false);
+//                new Signup2(first).setVisible(true);
+//                setVisible(false);
             }
 
         } catch (Exception e) {
